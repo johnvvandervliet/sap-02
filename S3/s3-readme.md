@@ -31,30 +31,44 @@ A data storage architecture that manages data as objects, ass opposed to other s
  
   - 
 
-  export AWS_CLI_AUTO_PROMPT = on-partial
+  1 export AWS_CLI_AUTO_PROMPT = on-partial
     4  export AWS_CLI_AUTO_PROMPT=on-partial
+  
     5  env
     6  env | grep AWS_CLI_AUTO_PROMPT
     7  clear
+  
     8  aws s3
+  
     9  aws s3api list-buckets --query "Buckets[].Name"
+  
    10  pwd
    11  export AWS_CLI_AUTO_PROMPT=on-partial
    12  clear
+  
    13  aws s3 cp john.jpg s3://my-example-bucket-jv1/
    14  pwd
    15  aws s3 cp ./john.jpg s3://my-example-bucket-jv1/
+  
    16  ls
    17  aws s3 cp /home/cloudshell-user/john.jpg s3://my-example-bucket-jv1/
    18  ls -la
+  
    19  aws s3 cp john.jpeg s3://my-example-bucket-jv1/
    20  ls
+  
    21  aws s3 sync /home/cloudshell-user/ s3://my-example-bucket-jv1/
    22  rm john.jpeg 
    23  ls
+  
    24  aws s3 cp s3://my-example-bucket-jv1/john.jpeg ./
    25  ls
+  
    26  aws s3api list-objects --bucket my-example-bucket-jv1 --query "Contents[].Key"
+  
    27  aws s3 rm s3://my-example-bucket-jv1/john.jpeg
+  
    28  aws s3 rm s3://my-example-bucket-jv1/ --recursive
+  
    29  aws s3api delete-bucket --bucket my-example-bucket-jv1
+  

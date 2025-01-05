@@ -71,4 +71,28 @@ A data storage architecture that manages data as objects, ass opposed to other s
    28  aws s3 rm s3://my-example-bucket-jv1/ --recursive
   
    29  aws s3api delete-bucket --bucket my-example-bucket-jv1
+
+
+  $ export AWS_CLI_AUTO_PROMPT=on-partial
+  $ env | grep AWS_CLI
+
+  Note to use
+  $ aws s3
+  > aws s3 "it then gives you the prompt with suggestions"
+  >
+  
+  aws s3api create-bucket --bucket my-example-bucket-04-01-2025-jv --region us-east-1
+  aws s3api list-buckets
+  
+  -- using jmespath
+aws s3api list-buckets --query Buckets[].Name
+aws s3api list-buckets --query Buckets[].Name --output table
+aws s3api list-buckets --query "Buckets[?Name == 'my-example-bucket-04-01-2025-jv']"
+
+
+  
+
+  
+
+  
   

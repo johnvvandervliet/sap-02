@@ -29,7 +29,8 @@ A data storage architecture that manages data as objects, ass opposed to other s
   - Management
   - Access Points
  
-  - 
+  q inline enable
+  
 
   1 export AWS_CLI_AUTO_PROMPT = on-partial
     4  export AWS_CLI_AUTO_PROMPT=on-partial

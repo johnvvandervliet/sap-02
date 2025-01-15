@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash bash
 sudo apt-get update
 sudo apt-get install -y wget apt-transport-https software-properties-common
 source /etc/os-release

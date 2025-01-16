@@ -92,6 +92,12 @@ aws s3api list-buckets --query "Buckets[?Name == 'my-example-bucket-04-01-2025-j
 
 
   
+---
+The ./sync my-new-shiny-bucket-jv files
+worked well the issue I had was a missing "$" on the bucket variable 
+steps are run the "batch-operations/create_files" script
+then run the "bash-scripts/sync" command and that works well
+
 
   
 

@@ -1,1 +1,15 @@
 #! /usr/bin/env bash
+echo "== sync"
+
+# Exit immediately if any command returns a non-zero status
+set -e
+
+# check for bucket name
+if [ -z "$1" ]; then
+    echo "There needs to be a bucket name eg. ./bucket my-bucket-name"
+    exit 1
+fi    
+
+# Check for filename prefix
+if [ -z "$2" ]; then
+    echo "There needs to

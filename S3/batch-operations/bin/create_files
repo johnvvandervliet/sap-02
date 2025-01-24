@@ -16,3 +16,5 @@ for i in {1..20}; do
 done
 
 echo "20 files created in $DIR"
+echo "================="
+tree $DIR

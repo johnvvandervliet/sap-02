@@ -12,8 +12,11 @@ fi
 BUCKET_NAME="$1"
 REGION="us-east-2"  # Default to us-east-1 if no region specified
 
+# https://docs.aws.amazon.com/cli/latest/reference/s3api/list-objects-v2.html
 aws s3api create-bucket \
  --bucket "$BUCKET_NAME" \
  --create-bucket-configuration LocationConstraint="$REGION" \
  --query Location \
  --output text
+
+ 

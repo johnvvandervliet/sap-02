@@ -99,6 +99,78 @@ steps are run the "batch-operations/create_files" script
 then run the "bash-scripts/sync" command and that works well
 
 
+
+---
+### S3 Overview
+S3 buckets are infrastructure and they hold s3 objects
+- S3 Bucket Naming Rules
+- S3 Bucket Restrictions
+- S3 Bucket Types
+- S3 Bucket Folders
+- Bucket Versioning
+- Bucket Encryption
+- Static Web Hosting
+
+# Naming Rules
+- Length: Bucket names must be 3-36 characters long
+- Characters: only lowercase letters, numbers, dots (.) and hyphens(-) are allowed.
+- Start and End: they must begin and end with letter or number
+- Adjacent Periods: not allowed
+- IP Address Format: names can't be formatted as IP addresses (198.182.54.1)
+- Restricted Prefixes : Can't start with "xn--", "s3alias",“amzn-s3-demo”, "sthree-", or "sthree-configurator".
+- Restricted Suffixes: , "--x-s3" "-s3alias", --ol-s3, ".mrap"
+- Uniqueness: must be unique across all AWS accounts in all AWS Reginos
+- Exclusivity: name can't be reused until orignal is deleted
+- Partitions: "aws" (standard Regions), "aws-cn" (China Regions), "aws-us-gov" ( AWS GovCloud US)
+- Transfer Acceleration: Buckets used with S3 Transfer Acceleration can't have dots in their names
+
+# S3 Bucket Restrictions
+- you can by default, create 100 buckets
+  - you need a service ticket to increase to 1000
+- You need to empty a bucket first before you can delete it
+- No Max size on buckets, no limit on number of objects in a bucket
+  - files can be 0 to 5TBs
+  - Files larger than 100MB should use multi-part upload
+  - S3 for outpost has limits
+- Get, Put, List and Delete operations are designed for high availability
+    - Creat, Delete or configuration optiosn should be run less often
+ 
+# S3 Bucket Types
+Two Types of Buckets
+- General Purpose
+    - Organizes data in a flat Hierarchy
+    - the original S3 bucket type
+    - recommened for most use cases
+    - Used with all storage calsses except can't be used with S3 Express One Zone storage class
+    - there aren't prefix limits
+    - there is a default limit of 100 general buckets per account
+      
+- Directory Buckets
+  - Organizes data folder Hierarchy
+  - only to be used with S3 Express One Zone storage class
+  - Recommened when you need single-digit millisecond performance on PUT and GET
+  - There aren't prefix limits for directory buckets
+  - There is a limit of 10 directory buckets per account
+  - Individual directories can scale horizontally
+
+ # S3 Bucket Folders
+ - When you create a folder in S3 Console, S3 creates a zero-byte S3 object with a name that ends in a forward slash eg. myfolder/
+- S3 folders are note their own indepent identies but just s3 objects
+- S3 folders don't include metadata, persmissions
+- S3 folders don't conaint anything, they can't be full or empty
+- S3 Folders arn't "moved", Objects contians the same prefix are renamed.
+
+# S3 Object Overview
+- Etags - a way to detect when the contents of an object had changed without download to content
+- Checksums - unsures the integrity of a files being uploaded or downloaded
+- Object Prefixes - simulates file-system folders in a flat hierarchy
+- Object Metadata - attache data alonside the content, to describe the contents of the data
+- Object tags - benfits resource tagging but at the object level
+- Ojbect Locking - makes data files immutable
+- Object Versioning - have mulitple version of a data file.
+
+  
+  
   
 
   

@@ -29,6 +29,24 @@ A data storage architecture that manages data as objects, ass opposed to other s
   - Management
   - Access Points
  
+  # S3 Objects ETags
+- Entity tag, MD5 hash that data in an object changed. Not meta data changes
+- used for revalidation for caching systems
+- etag is part of the HTTP protocal
+- Progamatic detect changes in s3 objects
+
+# checksums
+- you can change the checksum used in s3
+- CRC32
+- CRC32C
+- SHA1
+- SHA256
+- verify data integrity of files on the upload or download
+
+# additional check sums
+
+  
+ 
   q inline enable
   
 
